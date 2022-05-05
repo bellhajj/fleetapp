@@ -11,6 +11,11 @@ public class ApplicationController {
 		return "index";
 	}
 	
+	@GetMapping("/accessdenied")
+	public String accessDenied() {
+		return "access_denied";
+	}
+	
 	@GetMapping("/login")
 	public String login() {
 		return "login";
@@ -24,6 +29,11 @@ public class ApplicationController {
 	@GetMapping("/register")
 	public String register() {
 		return "register";
+	}
+	
+	@GetMapping("/error")
+	public String errorPage() {
+		return "pages-error-404";
 	}
 
 }

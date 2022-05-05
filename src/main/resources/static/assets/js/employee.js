@@ -4,7 +4,8 @@ $('document').ready(function(){
 		event.preventDefault();//to prvent from showing json-like page		
 		var href = $(this).attr('href');
 		$.get(href, function(employee, status){	
-			$('#idEdit').val(employee.id);		
+			$('#idEdit').val(employee.id);	
+			$('#txtUsernameEdit').val(employee.username);	
 			$('#titleEdit').val(employee.title);
 			$('#initialsEdit').val(employee.initials);
 			$('#socialSecurityNumberEdit').val(employee.socialSecurityNumber);

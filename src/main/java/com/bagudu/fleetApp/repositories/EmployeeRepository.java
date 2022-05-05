@@ -8,4 +8,6 @@ import com.bagudu.fleetApp.models.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
+	Employee findByUsername(String username);
+
 }

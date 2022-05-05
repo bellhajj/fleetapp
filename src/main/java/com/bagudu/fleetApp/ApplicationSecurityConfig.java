@@ -27,10 +27,13 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/login", "/resources/**", "/css/**", "/fonts/**", "/img/**", "/assets/**").permitAll()
 		.antMatchers("/register", "/resources/**", "/css/**", "/fonts/**", "/img/**", "/assets/**").permitAll() //Allow Register Page without taking me to logging Page
 		.antMatchers("/users/addnew").permitAll() //Allow this link without taking me to logging page
+		.antMatchers("/security/user/edit/**").hasRole("Admin")
 		.anyRequest().authenticated()
 		.and()
-		.formLogin()
+		.formLogin()		
 		.loginPage("/login").permitAll()
+		.and()
+		.exceptionHandling().accessDeniedPage("/accessdenied")
 		.and()
 		.logout().invalidateHttpSession(true)
 		.clearAuthentication(true)

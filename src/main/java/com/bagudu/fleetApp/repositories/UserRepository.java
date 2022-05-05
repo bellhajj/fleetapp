@@ -9,5 +9,7 @@ import com.bagudu.fleetApp.models.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 	
 	public User findByUsername(String username);
+	
+	public User findByFirstnameAndLastname(String firstname, String lastname);
 
 }
